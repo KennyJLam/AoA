@@ -14,10 +14,15 @@ namespace DM.Armory.Model
         public static string WEAPONS_PROPERTY = "MountedWeaponDescriptorList";
         public static string ROTATION_SPEED_PROPERTY = "VitesseRotation"; //Float32
         #endregion
-        
 
+        public AoATurret(string prefix = null)
+        {
+            Prefix = prefix ?? string.Empty;
+        }
 
         private List<AoAWeapon> _Weapons = new List<AoAWeapon>();
+
+        public string Prefix { get; private set; }
 
         public List<AoAWeapon> Weapons
         {
@@ -59,7 +64,7 @@ namespace DM.Armory.Model
                 AoAWeapon weapon;
                 foreach (NdfObjectReference w in weapons)
                 {
-                    weapon = new AoAWeapon();
+                    weapon = new AoAWeapon(Prefix);
                     if (weapon.LoadData(w.Instance, dictionary, dictionary2, iconPackage))
                         Weapons.Add(weapon);
                 }

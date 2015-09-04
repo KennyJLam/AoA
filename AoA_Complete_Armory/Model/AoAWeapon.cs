@@ -42,8 +42,14 @@ namespace DM.Armory.Model
         public static string SUPRESS_DAMAGES = "Ammunition.SuppressDamages"; //float32
         #endregion
 
+        public AoAWeapon(string prefix = null)
+        {
+            Prefix = prefix ?? string.Empty;
+        }
+
         #region Properties
         public string Name { get; private set; }
+        public string Prefix { get; private set; }
         public double Sustained { get; private set; }
         public float GroundRange { get; private set; }
         public float VLARange { get; private set; }
@@ -176,7 +182,8 @@ namespace DM.Armory.Model
             if (dataobject.TryGetValueFromQuery<NdfLocalisationHash>(NAME_PROPERTY, out ndfHash))
             {
                 if (dictionary.TryGetString(ndfHash.Value, out name))
-                    Name = name;
+                    Name = string.IsNullOrEmpty(Prefix) ? name : Prefix + ": " + name;
+
             }
             else { Name = string.Empty; }
 

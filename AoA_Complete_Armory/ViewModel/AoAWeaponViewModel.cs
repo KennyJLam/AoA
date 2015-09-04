@@ -20,6 +20,11 @@ namespace DM.Armory.ViewModel
         public string Name { get { return _Weapon.Name; } }
         public float GroundRange { get { return _Weapon.GroundRange; } }
         public float Alpha { get { return _Weapon.Alpha; } }
+        public int SimulatenousShots { get { return _Weapon.SimulatenousShots; } }
+        public int MaxShotsPerSalvo { get { return _Weapon.MaxShotsPerSalvo; } }
+        public double TimeBetweenShots { get { return _Weapon.TimeBetweenShots; } }
+        public double SalvoReloadTime { get { return _Weapon.SalvoReloadTime; } }
+        public double AimingTime { get { return _Weapon.AimingTime; } }
         public float PowGen { get { return _Weapon.PoWGen; } }
         public float VHARange { get { return _Weapon.VHARange; } }
         public float VLARange { get { return _Weapon.VLARange; } }

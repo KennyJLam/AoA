@@ -159,9 +159,10 @@ namespace DM.Armory.Model
                 }
                 
                 AoATurret turret;
+                int turrentNum = 1;
                 foreach(NdfObjectReference turr in turrets)
                 {
-                    turret = new AoATurret();
+                    turret = new AoATurret("T" + turrentNum++);
                     if(turret.LoadData(turr.Instance, dictionary, dictionary2, iconPackage))
                         Turrets.Add(turret);
                 }
