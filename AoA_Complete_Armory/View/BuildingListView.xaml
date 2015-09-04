@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="DM.Armory.View.BuildingListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Metro="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:ViewModel="clr-namespace:DM.Armory.ViewModel" 
+            xmlns:View="clr-namespace:DM.Armory.View"
+             FontFamily="/AoA_Complete_Armory;component/#Bombardier"
+             Name="View">
+
+    <UserControl.Resources>
+        <ViewModel:WPFBitmapConverter x:Key="BitmapConverter"/>
+    </UserControl.Resources>
+    <Metro:MetroContentControl Margin="10">
+        <StackPanel Orientation="Horizontal">
+            <Grid x:Name="Building" />
+
+            <Separator Name="UnitSeparator" Visibility="{Binding Visibility, ElementName=UnitBox}" Width="{Binding ActualWidth, ElementName=Building}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" />
+            <GroupBox Name ="UnitBox" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <GroupBox.Header>
+                    <Label FontFamily="/AoA_Complete_Armory;component/#GAMECUBEN DualSet" FontSize="14">units</Label>
+                </GroupBox.Header>
+                <View:TileMatrix  x:Name="UnitsList" />
+            </GroupBox>
+            <Separator Name="ReseachSeparator" Visibility="{Binding Visibility, ElementName=ResearchBox}" Width="{Binding ActualWidth, ElementName=Building}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" />
+            <GroupBox Name="ResearchBox"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <GroupBox.Header>
+                    <Label FontFamily="/AoA_Complete_Armory;component/#GAMECUBEN DualSet" FontSize="14">researches</Label>
+                </GroupBox.Header>
+                <View:TileMatrix x:Name="ResearchesList" />
+            </GroupBox>
+        </StackPanel>
+    </Metro:MetroContentControl>
+</UserControl>

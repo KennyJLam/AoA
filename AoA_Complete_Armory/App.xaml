@@ -1,0 +1,24 @@
+﻿<Application x:Class="AoA_Complete_Armory.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="/View/Windows/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="Cartel_Image" UriSource="pack://application:,,,/assets/bloc_cartel.jpg"/>
+            <BitmapImage x:Key="US_Image" UriSource="pack://application:,,,/assets/bloc_us.jpg"/>
+            <BitmapImage x:Key="Chimera_Image" UriSource="pack://application:,,,/assets/bloc_chimere.jpg"/>
+
+            <BitmapImage x:Key="Alu_Image" UriSource="pack://application:,,,/assets/Aluminium.png"/>
+            <BitmapImage x:Key="Cred_Image" UriSource="pack://application:,,,/assets/Credits.png"/>
+            <BitmapImage x:Key="Rare_Image" UriSource="pack://application:,,,/assets/RareEarth.png"/>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Red.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
